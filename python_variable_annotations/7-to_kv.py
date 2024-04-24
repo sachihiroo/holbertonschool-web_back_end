@@ -6,7 +6,7 @@ returns a tuple.
 from typing import List, Tuple
 
 
-def to_kv(k: str, v: int | float) -> Tuple[str, float]:
+def to_kv(k: str, v: List[int | float]) -> Tuple[str, float]:
     """
     converts key and value into a tuple of strings.
     key is the first element in the tuple,
