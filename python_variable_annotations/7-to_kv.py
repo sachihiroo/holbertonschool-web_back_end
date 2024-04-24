@@ -12,4 +12,4 @@ def to_kv(k: str, v: Union[int, float]) -> Tuple[str, float]:
     key is the first element in the tuple,
     value is the second.
     """
-    return k, str(v**2)
+    return k, (v**2)
