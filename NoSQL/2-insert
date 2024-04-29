@@ -1,4 +1,4 @@
-// Insert document
+// Insert document: inserts a document
 db.school.Insert(
     {
         name: “Holberton school”

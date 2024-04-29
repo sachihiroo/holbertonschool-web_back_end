@@ -1,2 +1,2 @@
-// All Matches
+// All Matches: list all documents
 db.school.find({ name: "Holberton school" })
