@@ -1,5 +1,5 @@
 // Insert document: inserts a document
-db.school.Insert(
+db.school.insert(
     {
         name: “Holberton school”
         })
