@@ -13,7 +13,7 @@ def index_range(page: int, page_size: int) -> tuple:
 
 
 class Server:
-    """Server class to paginate a database of popular baby names."""
+    """Server class to paginate a database of popular baby names"""
 
     DATA_FILE = "Popular_Baby_Names.csv"
 
@@ -32,9 +32,7 @@ class Server:
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """
-        :param page:
-        :param page_size:
-        :return:
+        retrieving a specific page of data from the dataset
         """
         assert type(page) is int and type(page_size) is int
         assert page > 0 and page_size > 0
@@ -43,3 +41,22 @@ class Server:
         if start >= len(rus):
             return []
         return rus[start:end]
+
+    def get_hyper(self, page: int = 1, page_size: int = 10) -> List[List]:
+        """
+        returns a dictionary containing the key-value pairs
+        """
+        res = self.get_page(page, page_size)
+        total_pages = math.ceil(len(self.dataset()) / page_size)
+        prev_page = page - 1 if page > 1 else None
+        next_page = page + 1 if page < total_pages else None
+
+        dict_hyper = {
+            "page_size": page_size,
+            "page": page,
+            "data": res,
+            "next_page": next_page,
+            "prev_page": prev_page,
+            "total_pages": total_pages,
+        }
+        return dict_hyper
